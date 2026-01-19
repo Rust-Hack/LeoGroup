@@ -1,12 +1,13 @@
 import Header from "../components/header/Header"
 
-function Contacts() {
+
+function Catalog() {
   return (
     <div>
       <Header />
-      ASASDA
+      ADCSAC
     </div>
   )
 }
 
-export default Contacts
+export default Catalog
