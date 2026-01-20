@@ -1,0 +1,23 @@
+.header {
+    padding: 14px 83px 0px 51px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linksBlock {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+}
+
+.link {
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+    color: #2A2A2A;
+    font-size: 26px;
+}
+
+.active {
+    color: rgba(32, 169, 240, 1);
+    text-decoration: underline;
+}

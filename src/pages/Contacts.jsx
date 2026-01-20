@@ -1,3 +1,4 @@
+import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
 
 function Contacts() {
@@ -5,6 +6,8 @@ function Contacts() {
     <div>
       <Header />
       ASASDA
+      <Footer/>
+
     </div>
   )
 }

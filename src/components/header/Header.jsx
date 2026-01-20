@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import logoWhite from "../../assets/logoBlack.svg";
 import styles from "./Header.module.css";
-import "@fontsource/mulish/400.css";
 
 function Header() {
   return (

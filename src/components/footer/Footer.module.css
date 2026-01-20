@@ -1,0 +1,65 @@
+.footer {
+    background: rgba(42, 42, 42, 1);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 83px;
+}
+
+.logoWithLocationText {
+    display: flex;
+    flex-direction: column;
+    width: 485px;
+}
+
+.footerTextLocation {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 26px;
+}
+
+.footerContactsAndMenu {
+    display: flex;
+    column-gap: 253px;
+}
+
+.footerContacts {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.footerContacts h1 {
+    font-size: 32px;
+    margin-bottom: 38px;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+}
+
+.footerContacts a {
+    font-family: 'Mulish', sans-serif;
+    font-size: 26px;
+    color: white;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+}
+
+.footerMenu h1 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 32px;
+    margin-bottom: 38px;
+    font-weight: 600;
+}
+
+.footerMenuLink {
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 26px;
+}
