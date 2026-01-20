@@ -5,7 +5,7 @@ import Header from "../components/header/Header"
 function Catalog() {
   return (
     <div>
-      <Header />
+      <Header/>
       ADCSAC
       <Footer/>
     </div>

@@ -1,12 +1,17 @@
 import { NavLink } from "react-router-dom";
-import logoWhite from "../../assets/logoBlack.svg";
+import logoBlack from "../../assets/logoBlack.svg";
+import logoWhite from "../../assets/headerLogoWhite.svg";
 import styles from "./Header.module.css";
 
-function Header() {
+function Header({ variant = "default" }) {
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        variant === "home" ? styles.homeHeader : ""
+      }`}
+    >
       <div>
-        <img src={logoWhite} alt="Logo" />
+        <img src={variant === "home" ? logoWhite : logoBlack} alt="Logo" />
       </div>
       <div className={styles.linksBlock}>
         <NavLink

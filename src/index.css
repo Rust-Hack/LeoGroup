@@ -28,3 +28,10 @@ a {
 img {
   display: block;
 }
+
+@font-face {
+  font-family: "Zinco-BlackCondensed";
+  src: url("./fonts/zinco_blackcondensed.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

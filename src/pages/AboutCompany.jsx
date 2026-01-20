@@ -6,7 +6,7 @@ import logoAboutText from "../assets/logoAboutText.svg";
 function AboutCompany() {
   return (
     <div>
-      <Header />
+      <Header/>
       <main className={styles.about}>
         <div className={styles.aboutTextAndLogo}>
           <img src={logoAboutText} alt="logo" />

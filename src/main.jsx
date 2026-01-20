@@ -5,6 +5,7 @@ import './index.css'
 import '@fontsource/mulish/400.css'
 import '@fontsource/mulish/700.css'
 import '@fontsource/mulish/600.css'
+import "@fontsource/open-sans-condensed"; 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

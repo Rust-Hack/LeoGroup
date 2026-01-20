@@ -4,7 +4,7 @@ import Header from "../components/header/Header"
 function Contacts() {
   return (
     <div>
-      <Header />
+      <Header/>
       ASASDA
       <Footer/>
 

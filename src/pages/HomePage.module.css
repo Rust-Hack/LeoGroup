@@ -1,0 +1,52 @@
+.background {
+    background-image: linear-gradient(rgba(27, 27, 27, 0.6)), url('../assets/backgroundHomePage.svg');
+}
+
+.homeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 280px 0px 328px 105px;
+}
+
+.homeText h1 {
+    font-family: "zinco_blackcondensed", sans-serif;
+    font-size: 110px;
+    color: white;
+    font-weight: 400;
+}
+
+.homeText p {
+    font-family: "Mulish", sans-serif;
+    font-size: 32px;
+    color: white;
+    font-weight: 600;
+    width: 1188px;
+}
+
+.backgroundSecond {
+    background-image: url('../assets/backgroundHomeSecond.svg');
+    display: flex;
+    height: 770px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 120px;
+}
+
+.backgroundSecondFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 940px;
+}
+
+.backgroundSecondFlex img {
+    width: 592px;
+}
+
+.backgroundSecondFlex p {
+    font-family: "Mulish", sans-serif;
+    font-size: 32px;
+    color: rgba(42, 42, 42, 1);
+}
