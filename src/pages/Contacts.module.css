@@ -1,0 +1,221 @@
+.background {
+  background-image: url("../assets/backgroundContacts.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contactsAndLocation {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    padding: 105px 0;
+}
+
+.mapAndText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ВНЕШНИЙ КОНТЕЙНЕР */
+.map {
+  width: 480px;
+  height: 480px;
+  border-radius: 44px;
+  padding: 8px;        
+    
+}
+
+/* САМ iframe */
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 36px;  
+  box-shadow: 0 0 0 1px #424242;
+
+}
+
+.backgroundContacts {
+    background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url('../assets/backgroundImageContacts.svg');
+    background-repeat: no-repeat;
+    border-radius: 44px;
+    box-shadow: 0 0 0 1px #424242;
+    width: 970px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.backgroundContacts h1 {
+    color: white;
+    font-size: 64px;
+    font-weight: 800;
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+}
+
+.gridContacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px 67px;
+    margin-left: 87px;
+}
+
+.gridContacts a {
+    color: white;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+}
+
+.backgroundContactsText {
+    background-color: white;
+}
+
+.backgroundContactsText h1 {
+    color: black;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 1600px) {
+    .contactsAndLocation {
+        gap: 51px;
+        padding: 105px 86px;
+    }
+
+    .backgroundContacts {
+        width: 100%;
+    }
+
+    .backgroundContacts h1 {
+        font-size: 40px;
+    }
+
+    .gridContacts {
+        margin: 0;
+        align-self: center;
+    }
+
+    .gridContacts a {
+        font-size: 32px;
+    }
+
+    .backgroundContactsText h1 {
+        font-size: 20px;
+    }
+
+    .mapAndText h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .gridContacts {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .mapAndText {
+        justify-content: flex-start;
+    }
+
+    .map {
+        width: 353px;
+        height: 353px;  
+    }
+
+    .contactsAndLocation {
+        height: 804px;
+    }
+}
+
+@media (max-width: 950px) {
+    .contactsAndLocation {
+        gap: 51px;
+        padding: 50px 86px;
+    }
+
+    .backgroundContacts {
+        width: 100%;
+    }
+
+    .backgroundContacts h1 {
+        font-size: 24px;
+    }
+
+    .gridContacts {
+        margin: 0;
+        align-self: center;
+    }
+
+    .gridContacts a {
+        font-size: 20px;
+    }
+
+    .backgroundContactsText h1 {
+        font-size: 15px;
+    }
+
+    .contactsAndLocation {
+        height: 550px;
+    }
+
+    .map {
+        width: 240px;
+        height: 240px;  
+    }
+
+    .mapAndText h1 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 790px) {
+    .contactsAndLocation {
+        flex-direction: column-reverse ;
+        gap: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .backgroundContacts {
+        border-radius: 0;
+        gap: 38px;
+        /* box-shadow: none; */
+    }
+    .backgroundContactsText {
+        width: 100%;
+    }
+
+    .backgroundContactsText h1 {
+        /* text-align: start; */
+    }
+
+    .gridContacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px 67px;
+    }
+
+    .mapAndText {
+        background-color: rgba(42, 42, 42, 1);
+        padding-top: 37px;
+    }
+
+    .mapAndText h1 {
+        color: white;
+    }
+}
+
+@media (max-width: 490px) {
+    .gridContacts {
+        display: flex;
+        gap: 13px 67px;
+    }
+}

@@ -16,6 +16,11 @@
     color: #2A2A2A;
     font-size: 26px;
 }
+.link1 {
+    font-size: 26px;
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+}
 
 .active {
     color: rgba(32, 169, 240, 1);
@@ -24,4 +29,169 @@
 
 .homeHeader .link {
   color: white;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.burger span {
+    width: 28px;
+    height: 3px;
+    background-color: #2A2A2A;
+}
+
+.burgerWhite span {
+  background-color: white;
+}
+
+.mobileLogo {
+    display: none;
+}
+
+.twoWaves {
+    display: none;
+}
+
+@media (max-width: 1030px) {
+    .burger {
+        display: flex;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .link1 {
+        position: relative;
+
+    }
+
+    .linksBlock {
+        display: none;
+        gap: 28px;
+        padding-top: 33px;
+    }
+
+    .linksBlockActive {
+        flex-direction: column;
+        position: fixed;
+        width: 398px;
+        top: 1%;
+        right: 0%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0px 0px 0px 602px;
+        height: 680px;
+        z-index: 1000;
+        color: white;
+        border: 4px solid rgba(32, 169, 240, 1);
+        display: flex;
+    }
+
+    .header {
+        padding: 25px 45px;
+    }
+
+    .menuAndLinkHome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 39px;
+        transform: translate(-19%, 0%);
+    }
+
+    .link1 {
+        font-size: 32px;
+    }
+
+    .link {
+        font-size: 32px;
+        color: white;
+    }
+
+    .active {
+        color: rgba(32, 169, 240, 1);
+
+    }
+
+    .burgerNone {
+        display: none;
+    }
+
+}
+
+@media (max-width: 428px) {
+    .mobileLogo {
+        display: flex;
+    } 
+
+    .menuAndLinkHome {
+        transform: none;
+    }
+
+    .menuAndLinkHome button{
+        display: none;
+    }
+
+    .burgerNone {
+        display: flex;
+    }
+
+    .linksBlockActive {
+        flex-direction: column;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 0;
+        height: 450px;
+        z-index: 1000;
+        color: white;
+        border: 0;
+        display: flex;
+    }
+
+    .twoWaves {
+        display: flex;
+        width: 100%;
+        height: 35px;          /* ВАЖНО */
+        overflow: hidden;
+    }
+
+    .twoWaves svg {
+        width: 50.1%;
+        display: block;   
+        height: 100%;
+        margin-left: -1px;
+    }
+
+
+    .linksBlockActive {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    /* .linksBlockActive {
+        position: static;
+    } */
+
+    .burgerNone {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2000;
+    }
+    .burgerNone span {
+        width: 28px;
+        height: 3px;
+        background-color: white;
+    }
+    
 }

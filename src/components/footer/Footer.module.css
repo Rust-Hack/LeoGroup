@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 485px;
+    gap: 38px;
 }
 
 .footerTextLocation {
@@ -63,3 +64,113 @@
     font-family: 'Mulish', sans-serif;
     font-size: 26px;
 }
+
+@media (max-width: 1300px) {
+    .footer {
+        padding-top: 51px;
+    }
+
+    .logoWithLocationText {
+        width: 360px;
+        gap: 29px;
+    }
+
+    .logoWithLocationText p {
+        font-size: 20px;
+    }
+
+    .footerContactsAndMenu {
+        gap: 143px;
+    }
+
+    .footerContacts {
+        gap: 12px;
+    }
+
+    .footerContacts h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .footerContacts a {
+        font-size: 20px;
+    }
+
+    .footerMenu {
+        gap: 12px;
+    }
+
+    .footerMenu h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .footerMenuLink {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 940px) {
+    .footer {
+        padding-top: 51px;
+    }
+
+    .logoWithLocationText {
+        width: 283px;
+    }
+
+    .logoWithLocationText p {
+        font-size: 15px;
+    }
+
+    .footerContactsAndMenu {
+        gap: 143px;
+    }
+
+    .footerContacts {
+        gap: 12px;
+    }
+
+    .footerContacts h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .footerContacts a {
+        font-size: 20px;
+    }
+
+    .footerMenu {
+        gap: 12px;
+    }
+
+    .footerMenu h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+
+    .footerMenuLink {
+        font-size: 20px;
+    }
+
+    .footerMenu {
+        display: none;
+    }
+}
+
+@media (max-width: 595px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 27px;
+    }
+
+    .footerTextLocation {
+        align-self: center;
+        width: 249px;
+    }
+
+    .footerContactsAndMenu {
+        width: 283px;
+    }
+} 

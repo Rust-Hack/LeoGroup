@@ -2,7 +2,8 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import styles from "./HomePage.module.css";
 import logoWithText from "../assets/logoWithText.svg";
-import logoHome from "../assets/logoHome.svg"
+// import logoHome from "../assets/logoHome.svg"
+import logoBlack from "../assets/logoBlack.svg"
 
 function HomePage() {
   return (
@@ -15,15 +16,15 @@ function HomePage() {
             Наша ответственность.
           </h1>
           <p>
-            Ведущий поставщик трубопроводной арматуры и
-            инженерно-сантехнического оборудования в Беларуси. Прямые контракты,
-            комплексное оснащение объектов, работа «под ключ».
+            Ведущий поставщик трубопроводной арматуры и <br className={styles.brHide}/>
+            инженерно-сантехнического оборудования в Беларуси. <br className={styles.brHide}/> Прямые контракты,
+            комплексное оснащение объектов, <br className={styles.brHide}/> работа «под ключ».
           </p>
         </div>
       </div>
       <div className={styles.backgroundSecond}>
         <div className={styles.backgroundSecondFlex}>
-          <img src={logoWithText} alt="logo" />
+          <img src={logoWithText} alt="logo" className={styles.logoSizeWithText}/>
           <p>
             Мы являемся первым импортёром, прямым поставщиком инженерного
             оборудования, наш ассортимент постоянно обновляется и расширяется,
@@ -31,7 +32,7 @@ function HomePage() {
           </p>
         </div>
         <div>
-          <img src={logoHome} alt="logo" />
+          <img src={logoBlack} alt="logo" className={styles.logoSize}/>
         </div>
       </div>
 
