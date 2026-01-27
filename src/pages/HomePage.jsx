@@ -4,11 +4,17 @@ import styles from "./HomePage.module.css";
 import logoWithText from "../assets/logoWithText.svg";
 // import logoHome from "../assets/logoHome.svg"
 import logoBlack from "../assets/logoBlack.svg"
+import bg from "../assets/backgroundHomePage.svg"
 
 function HomePage() {
   return (
     <div>
       <div className={styles.background}>
+          <img
+            src={bg}
+            alt=""
+            className={styles.bg}
+          />
         <Header variant="home" />
         <div className={styles.homeText}>
           <h1>
