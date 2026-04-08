@@ -40,6 +40,7 @@
 .backgroundContacts {
     background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url('../assets/backgroundImageContacts.svg');
     background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 44px;
     box-shadow: 0 0 0 1px #424242;
     width: 970px;
@@ -80,6 +81,14 @@
     font-weight: 500;
     font-family: 'Mulish', sans-serif;
     text-align: center;
+}
+
+.bg {
+    display: none;
+}
+
+.brmobile {
+    display: none;
 }
 
 @media (max-width: 1600px) {
@@ -133,6 +142,14 @@
     .contactsAndLocation {
         height: 804px;
     }
+
+    .br {
+        display: none;
+    }
+
+    .brmobile {
+        display: flex;
+    }
 }
 
 @media (max-width: 950px) {
@@ -185,16 +202,49 @@
     }
 
     .backgroundContacts {
+        padding-top: 38px;
+        position: relative;
+        overflow: hidden;
         border-radius: 0;
-        gap: 38px;
-        /* box-shadow: none; */
-    }
-    .backgroundContactsText {
+
         width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+
     }
 
-    .backgroundContactsText h1 {
-        /* text-align: start; */
+    .bg {
+        display: flex;
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        z-index: 0;
+
+    }
+
+    .backgroundContacts::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: rgba(42, 42, 42, 0.9);
+        z-index: 1;
+    }
+
+    .backgroundContacts > *:not(.bg) {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    .backgroundContactsText {
+        width: 100%;
     }
 
     .gridContacts {
@@ -217,5 +267,14 @@
     .gridContacts {
         display: flex;
         gap: 13px 67px;
+    }
+
+    .gridContacts {
+        align-self: flex-start;
+        margin-left: 18px;
+    }
+
+    .backgroundContacts h1 {
+        margin: 0 18px;
     }
 }

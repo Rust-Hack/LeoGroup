@@ -1,85 +1,90 @@
 .backgroundImage {
-    background-image: url('../assets/backgroundImageAboutCompany.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("../assets/backgroundImageAboutCompany.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .about {
-    display: flex;
-    justify-content: center;
-    padding-top: 137px;
-    padding-bottom: 79px;
+  display: flex;
+  justify-content: center;
+  padding: 137px 33px 79px;
 }
 
 .aboutTextAndLogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url("../assets/backgroundAboutText1.svg");
-    border-radius: 44px;
-    background-repeat: no-repeat;
-    max-width: 1540px;
-    height: 1590px;
-    padding: 31px 102px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  max-width: 1540px;
+  padding: 31px 102px;
+  border-radius: 44px;
+}
+
+/* Фоновая картинка */
+.bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+/* Затемнение */
+.aboutTextAndLogo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(42, 42, 42, 0.9);
+  z-index: 1;
+}
+
+/* Контент поверх фона */
+.aboutTextAndLogo > *:not(.bg) {
+  position: relative;
+  z-index: 2;
 }
 
 .aboutTextAndLogo p {
-    color: white;
-    font-family: 'Mulish', sans-serif;
-    font-size: 40px;
+  color: white;
+  font-family: "Mulish", sans-serif;
+  font-size: 40px;
 }
 
-@media (max-width: 1600px) {
-    .about {
-        padding-left: 33px;
-        padding-right: 33px;
-    }
-
-    .aboutTextAndLogo p {
-        font-size: 32px;
-    }
-
-    .aboutTextAndLogo {
-        width: 1540px;
-        height: 100%;
-        /* min-height: 957px; */
-        padding: 31px 64px;
-        gap: 36px;
-        justify-content: flex-start;
-    }
+.aboutTextAndLogo div {
+  width: 100%;
 }
 
+
+/* Адаптив */
 @media (max-width: 1030px) {
-    .about {
-        padding-top: 40px;
-    }
+  .about {
+    padding-top: 40px;
+  }
 
-    .aboutTextAndLogo p {
-        font-size: 20px;
-    }
+  .aboutTextAndLogo p {
+    font-size: 20px;
+  }
 
-    .aboutTextAndLogo img {
-        display: none;
-    }
+  .aboutTextAndLogo img:not(.bg) {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
-    .about {
-        padding-top: 40px;
-    }
+  .aboutTextAndLogo {
+    border-radius: 0;
+    padding: 24px;
+  }
 
-    .aboutTextAndLogo p {
-        font-size: 20px;
-    }
-
-    .aboutTextAndLogo {
-        border-radius: 0;
-        background-size: cover;
-        background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url("../assets/backgroundMobileAbout.svg");
-    }
-
-    .about {
-        padding: 0;
-    }
+  .about {
+    padding: 0;
+  }
 }

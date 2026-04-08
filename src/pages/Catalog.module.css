@@ -1,0 +1,72 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky ;
+   /* width: 454px; */
+  height: 281px; 
+}
+
+/* карточка */
+.formCard {
+  width: 454px;
+  height: 281px;
+  background-image: url('../assets/Subtract.svg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding: 0 50px 15px 50px;
+  gap: 15px;
+}
+
+.arrowRain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -40px;
+  width: 79px;
+  height: 79px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+/* заголовок */
+.title {
+  color: white;
+  font-family: "zinco_blackcondensedhq", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 100%;
+}
+
+/* инпуты */
+.input {
+  width: 100%;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  background: #FFFFFF;
+  color: #D0D0D0;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* кнопка */
+.button {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  background: #e5e5e5;
+  color: #2b8fc2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #ffffff;
+}

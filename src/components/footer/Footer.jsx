@@ -11,8 +11,9 @@ function Footer() {
         <div className={styles.logoWithLocationText}>
           <img src={footerLogo} alt="Logo" />
           <p className={styles.footerTextLocation}>
-            Республика Беларусь, 220028, <br />
-            г. Минск, ул. Софьи Ковалевской 54к1 пом. 206П
+            Республика Беларусь, 220014, <br />
+            г. Минск, пер. Софьи Ковалевской 54 к.1 <br />
+            пом. 206П
           </p>
         </div>
         <div className={styles.footerContactsAndMenu}>

@@ -15,7 +15,6 @@
 }
 
 
-
 .homeText {
     display: flex;
     width: 1180px;
@@ -30,7 +29,6 @@
     font-size: 85px;
     color: white;
     line-height: 91%;
-    /* height: 240px; */
 }
 
 .homeText p {
@@ -42,15 +40,47 @@
 }
 
 .backgroundSecond {
-    background-image: url('../assets/backgroundHomeSecond.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    position: relative; /* Чтобы псевдоэлемент не улетел */
     display: flex;
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 85px 120px;
+    padding: 165px 120px;
+    
+    /* Основной (нижний) фон */
+    background-image: url('../assets/background-middle-homepage.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    overflow: hidden; /* Чтобы фон не вылезал за границы */
 }
+
+/* Слой для второй картинки с прозрачностью */
+.backgroundSecond::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Верхний фон, которому нужна прозрачность */
+    background-image: url('../assets/backgroundHomeSecond.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    opacity: 0.5; /* Настройте прозрачность здесь */
+    z-index: 1;   /* Слой фона */
+}
+
+/* Важно: чтобы контент (текст/кнопки) был выше фона */
+.backgroundSecond > * {
+    position: relative;
+    z-index: 2;
+}
+
 
 .backgroundSecondFlex {
     display: flex;
@@ -67,6 +97,7 @@
 }
 
 .logoSize {
+    display: none;
     width: auto;
     height: 400px;
 }
@@ -75,6 +106,13 @@
     width: auto;
     height: 163px;
     object-fit: contain;
+}
+
+.consultationSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* важно */
+  min-height: 1000px; /* 🔥 добавь */
 }
 
 @media (max-width: 1300px) {
@@ -128,7 +166,12 @@
     }
 
     .backgroundSecond {
+        background-image: none;
         padding: 40px 30px;
+    }
+
+    .backgroundSecond::before {
+        opacity: 1;
     }
 
     .backgroundSecondFlex {
@@ -141,6 +184,7 @@
     }
 
     .logoSize {
+        display: flex;
         width: auto;
         height: 200px;
     }    

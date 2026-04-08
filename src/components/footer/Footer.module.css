@@ -1,15 +1,22 @@
 .footer {
-    background: rgba(42, 42, 42, 1);
+    background-image: url('../../assets/try.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 503px;
     display: flex;
     justify-content: space-around;
-    padding-top: 83px;
+    padding-top: 53px;
 }
 
 .logoWithLocationText {
     display: flex;
     flex-direction: column;
-    width: 485px;
+    width: 540px;
     gap: 38px;
+}
+
+.logoWithLocationText img {
+    height: 134px;
 }
 
 .footerTextLocation {
@@ -31,7 +38,7 @@
 }
 
 .footerContacts h1 {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 38px;
     color: white;
     font-family: 'Mulish', sans-serif;
@@ -40,7 +47,7 @@
 
 .footerContacts a {
     font-family: 'Mulish', sans-serif;
-    font-size: 26px;
+    font-size: 20px;
     color: white;
 }
 
@@ -54,7 +61,7 @@
 
 .footerMenu h1 {
     font-family: 'Mulish', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 38px;
     font-weight: 600;
 }
@@ -62,11 +69,12 @@
 .footerMenuLink {
     color: white;
     font-family: 'Mulish', sans-serif;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 @media (max-width: 1300px) {
     .footer {
+        background-image: url('../../assets/trylaptop.png');
         padding-top: 51px;
     }
 
@@ -160,9 +168,16 @@
 
 @media (max-width: 595px) {
     .footer {
+        background-image: url('../../assets/trymobile.png');
+        height: 100%;
+        background-size: 100% auto; 
+        background-position: center bottom; 
         flex-direction: column;
         align-items: center;
+        justify-content: start;
         gap: 27px;
+        padding-top: 20px;
+        padding-bottom: 145px;
     }
 
     .footerTextLocation {
@@ -173,4 +188,22 @@
     .footerContactsAndMenu {
         width: 283px;
     }
+
+    .logoWithLocationText{
+        gap: 20px;
+    }
 } 
+
+@media (max-width: 430px) {
+    .footer {
+        padding-top: 0;
+        padding-bottom: 120px;
+    }
+}
+
+@media (max-width: 390px) {
+    .footer {
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+}
