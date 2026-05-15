@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 60px 20px 80px;
+  padding: 140px 20px 80px;
 }
 
 /* ===== GRID: Desktop — 5 columns ===== */
@@ -76,7 +76,7 @@
 
 
   .main {
-    padding: 30px 20px 60px;
+    padding: 110px 20px 60px;
   }
 
   .grid {

@@ -1,4 +1,9 @@
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     padding: 14px 83px 0px 51px;
     display: flex;
     justify-content: space-between;
@@ -25,14 +30,6 @@
 .active {
     color: rgba(32, 169, 240, 1);
     text-decoration: underline;
-}
-
-.homeHeader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
 }
 
 .homeHeader .link {
