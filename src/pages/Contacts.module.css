@@ -155,7 +155,7 @@
 @media (max-width: 950px) {
     .contactsAndLocation {
         gap: 51px;
-        padding: 50px 86px;
+        padding: 130px 86px 50px;
     }
 
     .backgroundContacts {
