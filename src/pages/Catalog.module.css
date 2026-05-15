@@ -1,72 +1,117 @@
-.wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ===== PAGE ===== */
+.page {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky ;
-   /* width: 454px; */
-  height: 281px; 
+  flex-direction: column;
+  background-image: url('../assets/catalog/background-catalog.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* карточка */
-.formCard {
-  width: 454px;
-  height: 281px;
-  background-image: url('../assets/Subtract.svg');
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px 80px;
+}
+
+/* ===== GRID: Desktop — 5 columns ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 321px);
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+  width: 321px;
+  height: 321px;
+  background: rgba(42, 42, 42, 0.5);
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
-  padding: 0 50px 15px 50px;
-  gap: 15px;
-}
-
-.arrowRain{
-  display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -40px;
-  width: 79px;
-  height: 79px;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-}
-
-/* заголовок */
-.title {
-  color: white;
-  font-family: "zinco_blackcondensedhq", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  line-height: 100%;
-}
-
-/* инпуты */
-.input {
-  width: 100%;
-  height: 25px;
-  border-radius: 10px;
-  border: none;
-  background: #FFFFFF;
-  color: #D0D0D0;
-  padding: 0 14px;
-  font-size: 14px;
-  outline: none;
-}
-
-/* кнопка */
-.button {
-  padding: 10px 30px;
-  border-radius: 10px;
-  border: none;
-  background: #e5e5e5;
-  color: #2b8fc2;
-  font-weight: 600;
+  gap: 16px;
+  padding: 24px 20px 20px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.2s;
 }
 
-.button:hover {
-  background: #ffffff;
+.card:hover {
+  background: rgba(42, 42, 42, 0.75);
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.label {
+  color: #ffffff;
+  font-size: 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ===== LAPTOP ≤ 1725px: 2 columns ===== */
+@media (max-width: 1725px) {
+
+  .grid {
+    grid-template-columns: repeat(2, 321px);
+    gap: 86px 78px;
+  }
+}
+
+/* ===== MOBILE ≤ 720px ===== */
+@media (max-width: 720px) {
+
+
+  .main {
+    padding: 30px 20px 60px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 115px);
+    gap: 20px;
+  }
+
+  .card {
+    width: 115px;
+    height: 115px;
+    border-radius: 15px;
+    gap: 6px;
+    padding: 10px 8px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+}
+
+/* ===== VERY SMALL ≤ 380px ===== */
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
