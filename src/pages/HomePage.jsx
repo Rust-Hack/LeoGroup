@@ -1,8 +1,5 @@
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
 import styles from "./HomePage.module.css";
 import logoWithText from "../assets/logoWithText.svg";
-// import logoHome from "../assets/logoHome.svg"
 import logoBlack from "../assets/logoBlack.svg";
 import bg from "../assets/backgroundHomePage.svg";
 import Consultation from "../components/Consultation";
@@ -13,7 +10,6 @@ function HomePage() {
       <Consultation />
       <div className={styles.background}>
         <img src={bg} alt="" className={styles.bg} />
-        <Header variant="home" />
         <div className={styles.homeText}>
           <h1>
             Основа ваших проектов- <br />
@@ -45,8 +41,6 @@ function HomePage() {
           <img src={logoBlack} alt="logo" className={styles.logoSize} />
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

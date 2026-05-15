@@ -1,5 +1,3 @@
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
 import styles from "./AboutCompany.module.css";
 import logoAboutText from "../assets/logoAboutText.svg";
 import bgAbout from "../assets/backgroundAboutText1.svg";
@@ -7,14 +5,10 @@ import bgAbout from "../assets/backgroundAboutText1.svg";
 function AboutCompany() {
   return (
     <div className={styles.backgroundImage}>
-      <Header />
-
       <main className={styles.about}>
         <div className={styles.aboutTextAndLogo}>
-          {/* Фон */}
           <img src={bgAbout} alt="" className={styles.bg} />
 
-          {/* Контент */}
           <img src={logoAboutText} alt="logo" />
 
           <p>
@@ -52,8 +46,6 @@ function AboutCompany() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import styles from './Catalog.module.css';
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
 
 import icon1 from '../assets/catalog/1.svg';
 import icon2 from '../assets/catalog/2.svg';
@@ -28,22 +26,17 @@ const categories = [
 
 function Catalog() {
   return (
-    <div>
-      <div className={styles.page}>
-        <Header />
-        <main className={styles.main}>
-          <div className={styles.grid}>
-            {categories.map(cat => (
-              <div key={cat.id} className={styles.card}>
-                <img src={cat.icon} alt={cat.label} className={styles.icon} />
-                <span className={styles.label}>{cat.label}</span>
-              </div>
-            ))}
-          </div>
-        </main>
-      </div>
-
-      <Footer />
+    <div className={styles.page}>
+      <main className={styles.main}>
+        <div className={styles.grid}>
+          {categories.map(cat => (
+            <div key={cat.id} className={styles.card}>
+              <img src={cat.icon} alt={cat.label} className={styles.icon} />
+              <span className={styles.label}>{cat.label}</span>
+            </div>
+          ))}
+        </div>
+      </main>
     </div>
   );
 }

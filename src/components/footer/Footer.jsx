@@ -1,8 +1,6 @@
 import styles from "./Footer.module.css";
 import footerLogo from "../../assets/footerLogo.svg";
-import { NavLink } from "react-router";
-// import waweFooter from "../../assets/waveFooterPC.svg";
-// import waweFooter from "../../assets/djkys.svg";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
