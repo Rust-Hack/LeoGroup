@@ -16,15 +16,15 @@ function Footer() {
         </div>
         <div className={styles.footerContactsAndMenu}>
           <div className={styles.footerContacts}>
-            <h1>Контакты</h1>
+            <h2>Контакты</h2>
             <a href="tel:+375445729237">+375 44 572-92-37</a>
-            <a href="tel:+375 33 333-65-33">+375 33 333-65-33</a>
-            <a href="tel:+375 17 232-48-57">+375 17 232-48-57</a>
-            <a href="tel:+375 17 232-17-82">+375 17 232-17-82</a>
+            <a href="tel:+375333336533">+375 33 333-65-33</a>
+            <a href="tel:+375172324857">+375 17 232-48-57</a>
+            <a href="tel:+375172321782">+375 17 232-17-82</a>
             <a href="mailto:info@leo24.by">info@leo24.by</a>
           </div>
           <div className={styles.footerMenu}>
-            <h1>Меню</h1>
+            <h2>Меню</h2>
             <NavLink to="/" className={styles.footerMenuLink}>
               Главная
             </NavLink>

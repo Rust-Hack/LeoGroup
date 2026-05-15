@@ -13,7 +13,7 @@ function Contacts() {
               loading="lazy"
             />
           </div>
-          <h1>Мы в Яндекс картах</h1>
+          <h2>Мы в Яндекс картах</h2>
         </div>
 
         <div className={styles.backgroundContacts}>
@@ -29,12 +29,12 @@ function Contacts() {
           </div>
 
           <div className={styles.backgroundContactsText}>
-            <h1>
+            <p>
               Для расчёта индивидуальных условий
               <br className={styles.brmobile} /> доставки, пожалуйста,
               <br className={styles.br} />
               свяжитесь с <br className={styles.brmobile} /> нами по телефону.
-            </h1>
+            </p>
           </div>
         </div>
       </div>

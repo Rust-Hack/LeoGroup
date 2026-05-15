@@ -75,7 +75,7 @@
     background-color: white;
 }
 
-.backgroundContactsText h1 {
+.backgroundContactsText p {
     color: black;
     font-size: 28px;
     font-weight: 500;
@@ -114,11 +114,11 @@
         font-size: 32px;
     }
 
-    .backgroundContactsText h1 {
+    .backgroundContactsText p {
         font-size: 20px;
     }
 
-    .mapAndText h1 {
+    .mapAndText h2 {
         font-size: 20px;
     }
 }
@@ -175,7 +175,7 @@
         font-size: 20px;
     }
 
-    .backgroundContactsText h1 {
+    .backgroundContactsText p {
         font-size: 15px;
     }
 
@@ -188,7 +188,7 @@
         height: 240px;  
     }
 
-    .mapAndText h1 {
+    .mapAndText h2 {
         font-size: 15px;
     }
 }
@@ -258,7 +258,7 @@
         padding-top: 37px;
     }
 
-    .mapAndText h1 {
+    .mapAndText h2 {
         color: white;
     }
 }
