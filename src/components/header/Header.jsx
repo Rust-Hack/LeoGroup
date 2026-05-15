@@ -5,6 +5,7 @@ import mobileLogoWhite from "../../assets/mobileHeaderLogo.svg";
 import mobileLogoBlack from "../../assets/mobileHeaderLogoBlack.svg";
 import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const NAV_LINKS = [
   { to: "/catalog", label: "Каталог" },
@@ -27,20 +28,12 @@ const WAVE_PATH = `M 0 40
 
 function Header({ variant = "default" }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 428);
+  const isMobile = useMediaQuery("(max-width: 428px)");
+  const isDesktop = useMediaQuery("(min-width: 1031px)");
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 428);
-
-      if (window.innerWidth > 1030) {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    if (isDesktop) setIsOpen(false);
+  }, [isDesktop]);
 
   useEffect(() => {
     if (isMobile && isOpen) {

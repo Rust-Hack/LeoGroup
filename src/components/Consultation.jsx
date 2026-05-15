@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import styles from "./Consultation.module.css";
 import rain from "../assets/rain.svg";
 import rainForMobile from "../assets/rainForMobile.svg";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function Consultation() {
   const formRef = useRef();
@@ -11,7 +12,7 @@ function Consultation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [digits, setDigits] = useState("");
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const isMobile = useMediaQuery("(max-width: 500px)");
 
   // 📌 закрытие по клику вне формы
   useEffect(() => {
@@ -29,16 +30,6 @@ function Consultation() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
-
-  useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 500);
-  };
-
-  window.addEventListener("resize", handleResize);
-
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
