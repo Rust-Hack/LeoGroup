@@ -5,7 +5,7 @@ import logoWithText from "../assets/logoWithText.svg";
 // import logoHome from "../assets/logoHome.svg"
 import logoBlack from "../assets/logoBlack.svg";
 import bg from "../assets/backgroundHomePage.svg";
-import Consultation from "../components/Сonsultation";
+import Consultation from "../components/Consultation";
 
 function HomePage() {
   return (
