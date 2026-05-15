@@ -8,31 +8,52 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 function Consultation() {
   const formRef = useRef();
   const modalRef = useRef();
+  const triggerRef = useRef(null);
+  const phoneInputRef = useRef(null);
+  const wasOpenRef = useRef(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [digits, setDigits] = useState("");
+  const [status, setStatus] = useState("idle");
   const isMobile = useMediaQuery("(max-width: 500px)");
 
-  // 📌 закрытие по клику вне формы
   useEffect(() => {
+    if (!isOpen) return;
     const handleClickOutside = (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
       document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e) => {
+      if (e.key === "Escape") setIsOpen(false);
     };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      wasOpenRef.current = true;
+      phoneInputRef.current?.focus();
+    } else if (wasOpenRef.current) {
+      triggerRef.current?.focus();
+      setStatus("idle");
+      setDigits("");
+      setIsFocused(false);
+    }
   }, [isOpen]);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setStatus("sending");
 
     emailjs
       .sendForm(
@@ -41,109 +62,164 @@ function Consultation() {
         formRef.current,
         "Gxn4cO1plMToZHK7V"
       )
-      .then(() => {
-        alert("Заявка отправлена!");
-        formRef.current.reset();
-        setDigits("");
-        setIsFocused(false);
-        setIsOpen(false);
-      })
+      .then(() => setStatus("success"))
       .catch((error) => {
         console.error(error);
-        alert("Ошибка отправки");
+        setStatus("error");
       });
   };
 
-  // 📌 формат телефона
-  const formatPhone = (digits) => {
+  const formatPhone = (d) => {
     let result = "+375";
-
-    if (digits.length > 0) result += "(" + digits.substring(0, 2);
-    if (digits.length >= 2) result += ")";
-    if (digits.length > 2) result += digits.substring(2, 5);
-    if (digits.length >= 5) result += "-" + digits.substring(5, 7);
-    if (digits.length >= 7) result += "-" + digits.substring(7, 9);
-
+    if (d.length > 0) result += "(" + d.substring(0, 2);
+    if (d.length >= 2) result += ")";
+    if (d.length > 2) result += d.substring(2, 5);
+    if (d.length >= 5) result += "-" + d.substring(5, 7);
+    if (d.length >= 7) result += "-" + d.substring(7, 9);
     return result;
   };
 
   const handlePhoneChange = (e) => {
     let numbers = e.target.value.replace(/\D/g, "");
-
     if (numbers.startsWith("375")) {
       numbers = numbers.slice(3);
     }
-
     numbers = numbers.substring(0, 9);
     setDigits(numbers);
   };
 
-  const handleKeyDown = (e) => {
+  const handlePhoneKeyDown = (e) => {
+    if (e.key !== "Backspace" && e.key !== "Delete") return;
+    const input = e.target;
+    if (input.selectionStart !== input.selectionEnd) return;
+    const pos = input.selectionStart;
+
     if (e.key === "Backspace") {
-      e.preventDefault();
-      setDigits((prev) => prev.slice(0, -1));
+      if (pos === 0) return;
+      if (pos <= 5) {
+        e.preventDefault();
+        setDigits((prev) => prev.slice(0, -1));
+        return;
+      }
+      const charBefore = input.value[pos - 1];
+      if (!/\d/.test(charBefore)) {
+        e.preventDefault();
+        setDigits((prev) => prev.slice(0, -1));
+      }
+    } else if (e.key === "Delete") {
+      if (pos < 5) {
+        e.preventDefault();
+      }
     }
   };
 
   return (
     <>
-      {/* КАПЛЯ */}
       {!isOpen && (
-        <div className={styles.floatingButton} onClick={() => setIsOpen(true)}>
-          <img src={rain} alt="open" />
-        </div>
+        <button
+          type="button"
+          ref={triggerRef}
+          className={styles.floatingButton}
+          onClick={() => setIsOpen(true)}
+          aria-label="Открыть форму консультации"
+        >
+          <img src={rain} alt="" />
+        </button>
       )}
 
-      {/* МОДАЛКА */}
       {isOpen && (
-        <div className={styles.overlay}>
+        <div
+          className={styles.overlay}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="consultation-title"
+        >
           <div className={styles.modal} ref={modalRef}>
-            <form
-              ref={formRef}
-              onSubmit={sendEmail}
-              className={styles.formCard}
-            >
-              <div className={styles.arrowRain}>
-                <img src={isMobile ? rainForMobile : rain} alt="" />
+            {status === "success" ? (
+              <div className={styles.formCard}>
+                <div className={styles.arrowRain}>
+                  <img src={isMobile ? rainForMobile : rain} alt="" />
+                </div>
+                <div id="consultation-title" className={styles.title}>
+                  Заявка отправлена!
+                </div>
+                <p className={styles.successText}>
+                  Мы свяжемся с вами в ближайшее время.
+                </p>
+                <button
+                  type="button"
+                  className={styles.button}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Закрыть
+                </button>
               </div>
+            ) : (
+              <form
+                ref={formRef}
+                onSubmit={sendEmail}
+                className={styles.formCard}
+              >
+                <div className={styles.arrowRain}>
+                  <img src={isMobile ? rainForMobile : rain} alt="" />
+                </div>
 
-              <div className={styles.title}>Нужна консультация?</div>
+                <div id="consultation-title" className={styles.title}>
+                  Нужна консультация?
+                </div>
 
-              <input
-                type="tel"
-                name="phone"
-                className={styles.input}
-                value={
-                  digits.length === 0 && !isFocused
-                    ? ""
-                    : formatPhone(digits)
-                }
-                onChange={handlePhoneChange}
-                onKeyDown={handleKeyDown}
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(digits.length > 0)}
-                placeholder={
-                  isFocused || digits.length > 0
-                    ? "+375(__)___-__-__"
-                    : "Номер телефона"
-                }
-              />
+                <input
+                  ref={phoneInputRef}
+                  type="tel"
+                  name="phone"
+                  autoComplete="tel"
+                  aria-label="Номер телефона"
+                  className={styles.input}
+                  value={
+                    digits.length === 0 && !isFocused
+                      ? ""
+                      : formatPhone(digits)
+                  }
+                  onChange={handlePhoneChange}
+                  onKeyDown={handlePhoneKeyDown}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(digits.length > 0)}
+                  placeholder={
+                    isFocused || digits.length > 0
+                      ? "+375(__)___-__-__"
+                      : "Номер телефона"
+                  }
+                />
 
-              <input
-                name="name"
-                placeholder="ФИО"
-                className={styles.input}
-              />
-              <input
-                name="product"
-                placeholder="Товар"
-                className={styles.input}
-              />
+                <input
+                  name="name"
+                  autoComplete="name"
+                  aria-label="ФИО"
+                  placeholder="ФИО"
+                  className={styles.input}
+                />
+                <input
+                  name="product"
+                  aria-label="Товар"
+                  placeholder="Товар"
+                  className={styles.input}
+                />
 
-              <button type="submit" className={styles.button}>
-                Отправить
-              </button>
-            </form>
+                {status === "error" && (
+                  <div className={styles.error} role="alert">
+                    Не удалось отправить. Попробуйте ещё раз.
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  className={styles.button}
+                  disabled={status === "sending"}
+                >
+                  {status === "sending" ? "Отправка..." : "Отправить"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       )}

@@ -8,10 +8,19 @@
   cursor: pointer;
   z-index: 1000;
   transition: 0.3s;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .floatingButton:hover {
   transform: scale(1.1);
+}
+
+.floatingButton:focus-visible {
+  outline: 2px solid #20A9F0;
+  outline-offset: 4px;
+  border-radius: 50%;
 }
 
 .floatingButton img {
@@ -113,6 +122,24 @@
 
 .button:hover {
   background: #ffffff;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.successText {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
 }
 
 /* АНИМАЦИЯ */
