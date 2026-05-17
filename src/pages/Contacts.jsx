@@ -1,5 +1,5 @@
 import styles from "./Contacts.module.css";
-import bgContacts from "../assets/backgroundContactsMobile.jpg";
+import bgContacts from "../assets/contacts/mobile-bg.jpg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function Contacts() {

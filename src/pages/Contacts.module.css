@@ -1,5 +1,5 @@
 .background {
-  background-image: url("../assets/backgroundContacts.jpg");
+  background-image: url("../assets/common/pipes-bg.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -38,7 +38,7 @@
 }
 
 .backgroundContacts {
-    background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url('../assets/backgroundImageContacts.svg');
+    background-image: linear-gradient(rgba(42, 42, 42, 0.9)), url('../assets/contacts/block-bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 44px;

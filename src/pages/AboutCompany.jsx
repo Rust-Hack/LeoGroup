@@ -1,6 +1,6 @@
 import styles from "./AboutCompany.module.css";
-import logoAboutText from "../assets/logoAboutText.svg";
-import bgAbout from "../assets/backgroundAboutText1.svg";
+import logoAboutText from "../assets/about/text-logo.svg";
+import bgAbout from "../assets/about/text-bg.svg";
 
 function AboutCompany() {
   return (

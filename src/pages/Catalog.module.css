@@ -5,7 +5,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('../assets/backgroundContacts.jpg');
+  background-image: url('../assets/common/pipes-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

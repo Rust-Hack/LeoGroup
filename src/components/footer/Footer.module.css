@@ -1,5 +1,5 @@
 .footer {
-    background-image: url('../../assets/try.png');
+    background-image: url('../../assets/footer/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 503px;
@@ -74,7 +74,7 @@
 
 @media (max-width: 1300px) {
     .footer {
-        background-image: url('../../assets/trylaptop.png');
+        background-image: url('../../assets/footer/bg-laptop.png');
         padding-top: 51px;
     }
 
@@ -168,7 +168,7 @@
 
 @media (max-width: 595px) {
     .footer {
-        background-image: url('../../assets/trymobile.png');
+        background-image: url('../../assets/footer/bg-mobile.png');
         height: 100%;
         background-size: 100% auto; 
         background-position: center bottom; 

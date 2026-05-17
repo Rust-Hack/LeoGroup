@@ -48,7 +48,7 @@
 .formCard {
   width: 454px;
   height: 281px;
-  background-image: url("../assets/Subtract.svg");
+  background-image: url("../assets/consultation/form-bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -192,7 +192,7 @@
     .formCard {
         width: 295px;
         height: 295px;
-        background-image: url("../assets/SubtractForMobile.svg");
+        background-image: url("../assets/consultation/form-bg-mobile.svg");
         padding: 0 20px 15px 20px;
         gap: 17px; 
 

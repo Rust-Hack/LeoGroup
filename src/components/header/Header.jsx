@@ -1,8 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
-import logoBlack from "../../assets/logoBlack.svg";
-import logoWhite from "../../assets/headerLogoWhite.svg";
-import mobileLogoWhite from "../../assets/mobileHeaderLogo.svg";
-import mobileLogoBlack from "../../assets/mobileHeaderLogoBlack.svg";
+import logoBlack from "../../assets/common/home-icon-dark.svg";
+import logoWhite from "../../assets/common/home-icon-light.svg";
+import mobileLogoWhite from "../../assets/header/text-logo-light.svg";
+import mobileLogoBlack from "../../assets/header/text-logo-dark.svg";
 import styles from "./Header.module.css";
 import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
