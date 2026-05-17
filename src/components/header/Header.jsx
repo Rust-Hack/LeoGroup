@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logoBlack from "../../assets/logoBlack.svg";
 import logoWhite from "../../assets/headerLogoWhite.svg";
 import mobileLogoWhite from "../../assets/mobileHeaderLogo.svg";
 import mobileLogoBlack from "../../assets/mobileHeaderLogoBlack.svg";
 import styles from "./Header.module.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const NAV_LINKS = [
@@ -27,13 +27,46 @@ const WAVE_PATH = `M 0 40
   Z`;
 
 function Header({ variant = "default" }) {
+  const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [stickyBg, setStickyBg] = useState("dark");
   const isMobile = useMediaQuery("(max-width: 428px)");
   const isDesktop = useMediaQuery("(min-width: 1031px)");
 
   useEffect(() => {
     if (isDesktop) setIsOpen(false);
   }, [isDesktop]);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const probeBg = useCallback(() => {
+    const els = document.elementsFromPoint(60, 30);
+    for (const el of els) {
+      if (el.closest("header")) continue;
+      const bgEl = el.closest("[data-bg]");
+      if (bgEl) {
+        setStickyBg(bgEl.dataset.bg);
+        return;
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    probeBg();
+    window.addEventListener("scroll", probeBg, { passive: true });
+    return () => window.removeEventListener("scroll", probeBg);
+  }, [probeBg]);
+
+  useEffect(() => {
+    setIsScrolled(false);
+    requestAnimationFrame(probeBg);
+  }, [pathname, probeBg]);
 
   useEffect(() => {
     if (isMobile && isOpen) {
@@ -58,14 +91,20 @@ function Header({ variant = "default" }) {
 
   const closeMenu = () => setIsOpen(false);
   const toggleMenu = () => setIsOpen((v) => !v);
+  const handleLogoClick = () => {
+    closeMenu();
+    window.scrollTo(0, 0);
+    setIsScrolled(false);
+    requestAnimationFrame(probeBg);
+  };
 
-  const logoSrc =
-    variant === "home" || (isMobile && isOpen) ? logoWhite : logoBlack;
+  const needsWhiteLogo =
+    (variant === "home" && !isScrolled) ||
+    (isMobile && isOpen) ||
+    (isScrolled && stickyBg === "dark");
 
-  const mobileLogoSrc =
-    variant === "home" || (isMobile && isOpen)
-      ? mobileLogoWhite
-      : mobileLogoBlack;
+  const logoSrc = needsWhiteLogo ? logoWhite : logoBlack;
+  const mobileLogoSrc = needsWhiteLogo ? mobileLogoWhite : mobileLogoBlack;
 
   const linkClass = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.active}` : styles.link;
@@ -81,8 +120,12 @@ function Header({ variant = "default" }) {
         variant === "home" ? styles.homeHeader : ""
       }`}
     >
-      <NavLink to="/" onClick={closeMenu}>
-        <div className={isOpen ? styles.up : ""}>
+      <NavLink to="/" onClick={handleLogoClick} className={styles.desktopLogo}>
+        <div
+          className={`${isOpen ? styles.up : ""} ${
+            isScrolled ? styles.logoSticky : ""
+          }`}
+        >
           <img src={logoSrc} alt="Logo" />
         </div>
       </NavLink>

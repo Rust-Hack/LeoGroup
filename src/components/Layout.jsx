@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
@@ -6,6 +7,10 @@ import styles from "./Layout.module.css";
 function Layout() {
   const { pathname } = useLocation();
   const variant = pathname === "/" ? "home" : "default";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className={styles.layout}>

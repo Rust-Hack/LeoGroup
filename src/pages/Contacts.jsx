@@ -1,9 +1,15 @@
 import styles from "./Contacts.module.css";
 import bgContacts from "../assets/backgroundContactsMobile.jpg";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function Contacts() {
+  const isNarrow = useMediaQuery("(max-width: 790px)");
+
   return (
-    <div className={styles.background}>
+    <div
+      className={styles.background}
+      data-bg={isNarrow ? "dark" : "light"}
+    >
       <div className={styles.contactsAndLocation}>
         <div className={styles.mapAndText}>
           <div className={styles.map}>
@@ -28,7 +34,7 @@ function Contacts() {
             <a href="mailto:info@leo24.by">info@leo24.by</a>
           </div>
 
-          <div className={styles.backgroundContactsText}>
+          <div className={styles.backgroundContactsText} data-bg="light">
             <p>
               Для расчёта индивидуальных условий
               <br className={styles.brmobile} /> доставки, пожалуйста,

@@ -9,6 +9,20 @@
     justify-content: space-between;
 }
 
+.logoSticky {
+    position: fixed;
+    top: 14px;
+    left: 51px;
+    z-index: 100;
+}
+
+@media (max-width: 1030px) {
+    .logoSticky {
+        top: 25px;
+        left: 45px;
+    }
+}
+
 .linksBlock {
     display: flex;
     align-items: center;
@@ -150,7 +164,7 @@
 @media (max-width: 428px) {
     .mobileLogo {
         display: flex;
-    } 
+    }
 
     .menuAndLinkHome {
         transform: none;

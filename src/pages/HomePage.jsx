@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <div>
       <Consultation />
-      <div className={styles.background}>
+      <div className={styles.background} data-bg="dark">
         <img src={bg} alt="" className={styles.bg} />
         <div className={styles.homeText}>
           <h1>
@@ -23,7 +23,7 @@ function HomePage() {
           </p>
         </div>
       </div>
-      <div className={styles.backgroundSecond}>
+      <div className={styles.backgroundSecond} data-bg="light">
         <div className={styles.backgroundSecondFlex}>
           <img
             src={logoWithText}

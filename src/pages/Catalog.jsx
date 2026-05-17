@@ -26,7 +26,7 @@ const categories = [
 
 function Catalog() {
   return (
-    <div className={styles.page}>
+    <div className={styles.page} data-bg="light">
       <main className={styles.main}>
         <div className={styles.grid}>
           {categories.map(cat => (

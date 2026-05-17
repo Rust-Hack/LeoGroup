@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer>
+    <footer data-bg="dark">
       <div className={styles.footer}>
         <div className={styles.logoWithLocationText}>
           <img src={footerLogo} alt="Logo" />

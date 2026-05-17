@@ -4,7 +4,7 @@ import bgAbout from "../assets/backgroundAboutText1.svg";
 
 function AboutCompany() {
   return (
-    <div className={styles.backgroundImage}>
+    <div className={styles.backgroundImage} data-bg="dark">
       <main className={styles.about}>
         <div className={styles.aboutTextAndLogo}>
           <img src={bgAbout} alt="" className={styles.bg} />
