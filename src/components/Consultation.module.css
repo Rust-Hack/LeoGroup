@@ -107,11 +107,11 @@
   padding: 0 14px;
   font-size: 14px;
   outline: none;
-  color: #D0D0D0;
+  color: #2A2A2A;
 }
 
 .input::placeholder {
-  color: #D0D0D0; /* нужный цвет */
+  color: #D0D0D0;
 }
 
 /* BUTTON */
