@@ -162,10 +162,6 @@
 }
 
 @media (max-width: 428px) {
-    .mobileLogo {
-        display: flex;
-    }
-
     .menuAndLinkHome {
         transform: none;
     }
@@ -239,5 +235,11 @@
         position: relative;
         z-index: 1001;
     }
-    
+
+    .mobileLogo {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
