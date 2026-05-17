@@ -81,6 +81,13 @@
   align-items: center;
 }
 
+.arrowRain img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateX(22%);
+}
+
 /* ТЕКСТ */
 .title {
   color: white;

@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import styles from "./Consultation.module.css";
-import rain from "../assets/rain.svg";
-import rainForMobile from "../assets/rainForMobile.svg";
+import rain from "../assets/rain.png";
+import rainForMobile from "../assets/rainForMobile.png";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function Consultation() {

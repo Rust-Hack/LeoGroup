@@ -1,5 +1,5 @@
 import styles from "./Contacts.module.css";
-import bgContacts from "../assets/backgroundContactsMobile.svg";
+import bgContacts from "../assets/backgroundContactsMobile.jpg";
 
 function Contacts() {
   return (
