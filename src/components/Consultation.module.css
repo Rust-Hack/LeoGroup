@@ -3,8 +3,8 @@
   position: fixed;
   bottom: 80px;
   right: 100px;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   cursor: pointer;
   z-index: 1000;
   transition: 0.3s;
@@ -165,8 +165,8 @@
     .floatingButton {
         bottom: 60px;
         right: 60px;
-        width: 110px;
-        height: 110px;
+        width: 140px;
+        height: 140px;
     }
 }
 
@@ -174,8 +174,8 @@
     .floatingButton {
         bottom: 50px;
         right: 60px;
-        width: 90px;
-        height: 90px;
+        width: 115px;
+        height: 115px;
     }
 }
 
@@ -183,8 +183,8 @@
     .floatingButton {
         bottom: 40px;
         right: 60px;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -222,7 +222,7 @@
     .floatingButton {
         bottom: 30px;
         right: 30px;
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
 }
