@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.css";
 import logoWithText from "../assets/logoWithText.svg";
 import logoBlack from "../assets/logoBlack.svg";
-import bg from "../assets/backgroundHomePage.svg";
+import bg from "../assets/backgroundHomePage.jpg";
 import Consultation from "../components/Consultation";
 
 function HomePage() {
