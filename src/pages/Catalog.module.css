@@ -62,12 +62,30 @@
   line-height: 1.2;
 }
 
-/* ===== LAPTOP ≤ 1725px: 2 columns ===== */
+/* ===== LAPTOP ≤ 1725px: 3 columns ===== */
 @media (max-width: 1725px) {
+
+  .grid {
+    grid-template-columns: repeat(3, 321px);
+    gap: 60px 60px;
+  }
+
+  /* 10 карточек: последняя в 4-м ряду одна — центрируем */
+  .card:last-child {
+    grid-column: 2;
+  }
+}
+
+/* ===== NARROW LAPTOP ≤ 1180px: back to 2 columns ===== */
+@media (max-width: 1180px) {
 
   .grid {
     grid-template-columns: repeat(2, 321px);
     gap: 86px 78px;
+  }
+
+  .card:last-child {
+    grid-column: auto;
   }
 }
 
