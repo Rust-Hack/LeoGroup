@@ -17,7 +17,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/LeoGroup" }
+  { basename: "/" }
 );
 
 function App() {
